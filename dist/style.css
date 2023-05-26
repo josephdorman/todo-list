@@ -52,10 +52,10 @@ body {
   width: 270px;
 }
 
-.default-project-list {
+.default-project-list,
+.user-project-list {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
   gap: 10px;
 }
 
@@ -77,8 +77,14 @@ body {
 }
 
 .project-list-title {
+  margin: 20px 0px;
   padding-bottom: 10px;
   border-bottom: 2px solid black;
+}
+
+.user-project-list {
+  border-bottom: 2px solid black;
+  padding-bottom: 20px;
 }
 
 .content {
