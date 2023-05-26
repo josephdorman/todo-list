@@ -68,7 +68,8 @@ body {
   font-size: 18px;
 }
 
-.project:hover {
+.project:hover,
+.project:focus {
   background-color: #cfcfcf;
   font-weight: bold;
   border-radius: 5px;
