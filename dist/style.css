@@ -40,6 +40,12 @@ body {
   height: 25px;
 }
 
+/*
+.delete {
+  margin-left: 90px;
+}
+*/
+
 .body {
   display: flex;
   flex: 1;
