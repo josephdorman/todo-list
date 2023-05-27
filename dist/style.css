@@ -46,6 +46,12 @@ body {
 }
 */
 
+.add {
+  height: 25px;
+  background-color: white;
+  border: none;
+}
+
 .body {
   display: flex;
   flex: 1;
@@ -93,6 +99,29 @@ body {
   padding-bottom: 20px;
 }
 
-.content {
+.project-content {
+  display: flex;
+  flex-direction: column;
   flex: 1;
+  gap: 30px;
+  padding: 40px 80px;
 }
+
+.project-title {
+  font-weight: bold;
+  font-size: 32px;
+}
+
+.project-task-view {
+
+}
+
+.project-task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+
