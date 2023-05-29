@@ -112,19 +112,18 @@ body {
   outline: none;
 }
 
-.project-creation-cancel,
-.project-creation-add {
+.project-creation-btns {
   border: none;
   border-radius: 5px;
   font-size: 16px;
   font-weight: bold;
 }
 
-.project-creation-cancel {
+#project-creation-cancel {
   background-color: rgb(255, 31, 31);
 }
 
-.project-creation-add {
+#project-creation-add {
   background-color: rgb(27, 196, 27);
 }
 
