@@ -113,10 +113,6 @@ body {
   font-size: 32px;
 }
 
-.project-task-view {
-
-}
-
 .project-task-header {
   display: flex;
   justify-content: space-between;
