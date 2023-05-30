@@ -24,6 +24,8 @@ function addNewProject () {
 
     userProjectList.appendChild(newProjectButton);
 
+    clickHandler();
+
   }
 
   const createNewProjectField = () => {
@@ -78,13 +80,10 @@ function addNewProject () {
         deleteLastChild();
         createNewProjectButton();
 
-        clickHandler();
       }
       else if (btnID === 'project-creation-cancel') {
         deleteLastChild();
         createNewProjectButton();
-
-        clickHandler();
 
       }
 
