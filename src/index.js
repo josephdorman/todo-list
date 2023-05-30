@@ -3,16 +3,26 @@
 function addNewProject () {
   const userProjectList = document.querySelector('.user-project-list');
 
-  const removeNewProjectButton = () => {
+  const deleteLastChild = () => {
     const projectList = document.querySelector('.user-project-list');
     projectList.removeChild(userProjectList.lastElementChild);
   }
 
   const createNewProjectButton = () => {
+    const newProjectButton = document.createElement('button');
+    newProjectButton.setAttribute('id', 'new-project');
+    newProjectButton.classList.add('project');
 
-  }
+    const newProjectButtonImage = document.createElement('img');
+    newProjectButtonImage.classList.add('icon');
+    newProjectButtonImage.setAttribute('src', './images/icons/plus.svg');
 
-  const removeNewProjectField = () => {
+    const text = document.createTextNode('Add New Project');
+
+    newProjectButton.appendChild(newProjectButtonImage);
+    newProjectButton.appendChild(text);
+
+    userProjectList.appendChild(newProjectButton);
 
   }
 
@@ -27,8 +37,10 @@ function addNewProject () {
 
     const projectCreationAdd = document.createElement('button');
     const projectCreationCancel = document.createElement('button');
-    projectCreationAdd.classList.add('project-creation-add');
-    projectCreationCancel.classList.add('project-creation-cancel');
+    projectCreationAdd.setAttribute('id', 'project-creation-add');
+    projectCreationCancel.setAttribute('id', 'project-creation-cancel');
+    projectCreationAdd.classList.add('project-creation-btns');
+    projectCreationCancel.classList.add('project-creation-btns');
     projectCreationAdd.textContent = 'Add';
     projectCreationCancel.textContent = 'Cancel';
 
@@ -40,9 +52,40 @@ function addNewProject () {
 
   }
 
+  const addNewProjectToUserList = () => {
+
+  }
+
   const createNewProject = () => {
-    removeNewProjectButton();
+    const newProjectLogic = (btnID) => {
+      if (btnID === 'project-creation-add') {
+        console.log(btnID);
+      }
+      else if (btnID === 'project-creation-cancel') {
+        deleteLastChild();
+        createNewProjectButton();
+
+        clickHandler();
+
+      }
+
+    }
+    
+    const projectFieldClickHandler = () => {
+      const projectCreationBtns = document.querySelectorAll('.project-creation-btns');
+      projectCreationBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          newProjectLogic(btn.id);
+        });
+      });
+    }
+
+    // create project
+    deleteLastChild();
     createNewProjectField();
+
+    projectFieldClickHandler();
+
   }
 
   const clickHandler = () => {
