@@ -53,13 +53,32 @@ function addNewProject () {
   }
 
   const addNewProjectToUserList = () => {
+    const textField = document.getElementById('project-creation-field').value;
+    const text = document.createTextNode(textField);
+
+    const project = document.createElement('button');
+    const projectImage = document.createElement('img');
+
+    project.classList.add('project');
+
+    projectImage.classList.add('icon');
+    projectImage.setAttribute('src', './images/icons/format-list-checks.svg');
+
+    project.appendChild(projectImage);
+    project.appendChild(text);
+
+    userProjectList.insertBefore(project, userProjectList.lastChild);
 
   }
 
   const createNewProject = () => {
     const newProjectLogic = (btnID) => {
       if (btnID === 'project-creation-add') {
-        console.log(btnID);
+        addNewProjectToUserList();
+        deleteLastChild();
+        createNewProjectButton();
+
+        clickHandler();
       }
       else if (btnID === 'project-creation-cancel') {
         deleteLastChild();
