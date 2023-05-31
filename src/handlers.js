@@ -1,6 +1,6 @@
 import dom from "./dom";
 
-const listeners = (() => {
+const handlers = (() => {
   function newProjectClickHandler () {
     const button = document.getElementById('new-project');
     
@@ -13,4 +13,4 @@ const listeners = (() => {
 
 })();
 
-export default listeners;
+export default handlers;

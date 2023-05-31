@@ -1,6 +1,6 @@
 import dom from "./dom";
-import listeners from "./handlers";
+import handlers from "./handlers";
 
 dom.showProjects();
 
-listeners.newProjectClickHandler();
+handlers.newProjectClickHandler();
