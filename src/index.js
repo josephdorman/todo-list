@@ -1,3 +1,3 @@
-import addNewProject from "./projects";
+// import addNewProject from "./projects";
+// addNewProject();
 
-addNewProject();

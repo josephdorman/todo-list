@@ -1,4 +1,5 @@
 // CREATE PROJECT EVENT HANDLERS
+/*
 
 export default function addNewProject () {
   const userProjectList = document.querySelector('.user-project-list');
@@ -113,3 +114,4 @@ export default function addNewProject () {
 
   clickHandler();
 }
+*/
