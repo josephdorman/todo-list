@@ -18,7 +18,6 @@ const dom = (() => {
 
   function showProjects() {
     const userProjects = document.querySelector('.user-project-list');
-    const newProjectBtn = document.querySelector('.new-project');
 
     for (let i = 0; i < projects.projectsList.length; i++) {
       const project = document.createElement('button');
@@ -32,7 +31,7 @@ const dom = (() => {
 
       project.appendChild(projectIcon);
       project.appendChild(projectName);
-      userProjects.insertBefore(project, newProjectBtn);
+      userProjects.appendChild(project);
     }
 
   }

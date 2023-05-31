@@ -135,8 +135,9 @@ body {
   background-color: rgb(27, 196, 27);
 }
 
-.user-project-list {
+.project-form {
   border-bottom: 2px solid black;
+  margin-top: 10px;
   padding-bottom: 20px;
 }
 
