@@ -30,6 +30,11 @@ const dom = (() => {
     userProjects.appendChild(form);
   }
 
+  function removeLastElement() {
+    const userProjects = document.querySelector('.user-project-list');
+    userProjects.removeChild(userProjects.lastElementChild);
+  }
+
   function showAddProjectBtn() {
     const userProjects = document.querySelector('.user-project-list');
 
@@ -70,7 +75,7 @@ const dom = (() => {
 
   }
 
-  return {showProjects, showProjectForm};
+  return {showProjects, showProjectForm, removeLastElement};
 
 })();
 

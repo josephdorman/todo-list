@@ -5,6 +5,7 @@ const handlers = (() => {
     const button = document.getElementById('new-project');
     
     button.addEventListener('click', () => {
+      dom.removeLastElement();
       dom.showProjectForm();
     });
   }
