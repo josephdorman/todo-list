@@ -3,4 +3,4 @@ import listeners from "./handlers";
 
 dom.showProjects();
 
-listeners.newProjectClickhandler();
+listeners.newProjectClickHandler();
