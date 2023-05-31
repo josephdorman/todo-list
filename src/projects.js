@@ -14,7 +14,7 @@ const projects = (() => {
     projectsList.push(project);
   }
 
-  const testProject = 'test';
+  const testProject = 'Test Project';
   addProject(testProject);
 
   return {projectsList, addProject};
