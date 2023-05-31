@@ -14,7 +14,10 @@ const projects = (() => {
     projectsList.push(project);
   }
 
-  return {addProject};
+  const testProject = 'test';
+  addProject(testProject);
+
+  return {projectsList, addProject};
 
 })();
 
