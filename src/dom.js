@@ -1,6 +1,24 @@
 import projects from "./projects";
 
 const dom = (() => {
+  function showAddProjectBtn() {
+    const userProjects = document.querySelector('.user-project-list');
+
+    const button = document.createElement('button');
+    const icon = document.createElement('img');
+    const name = document.createTextNode('Add New Project');
+
+    button.setAttribute('id', 'new-project');
+    button.classList.add('project');
+
+    icon.classList.add('icon');
+    icon.setAttribute('src', './images/icons/plus.svg');
+
+    button.appendChild(icon);
+    button.appendChild(name);
+    userProjects.appendChild(button);
+  }
+
   function showProjects() {
     const userProjects = document.querySelector('.user-project-list');
 
@@ -18,6 +36,8 @@ const dom = (() => {
       project.appendChild(projectName);
       userProjects.appendChild(project);
     }
+
+    showAddProjectBtn()
 
   }
 
