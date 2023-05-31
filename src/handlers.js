@@ -5,7 +5,7 @@ const handlers = (() => {
     const button = document.getElementById('new-project');
     
     button.addEventListener('click', () => {
-      console.log('New Project was clicked');
+      dom.showProjectForm();
     });
   }
 
