@@ -1,6 +1,35 @@
 import projects from "./projects";
 
 const dom = (() => {
+  function showProjectForm() {
+    const userProjects = document.querySelector('.user-project-list');
+
+    const form = document.createElement('div');
+    const formField = document.createElement('input');
+    const addBtn = document.createElement('button');
+    const cancelBtn = document.createElement('button');
+
+    form.classList.add('project-creation');
+
+    formField.setAttribute('id', 'project-creation-field');
+    formField.setAttribute('type', 'text');
+    formField.setAttribute('name', 'project-title');
+
+    addBtn.classList.add('project-creation-btns');
+    addBtn.setAttribute('id', 'project-creation-add');
+    addBtn.textContent = 'Add';
+
+    cancelBtn.classList.add('project-creation-btns');
+    cancelBtn.setAttribute('id', 'project-creation-cancel');
+    cancelBtn.textContent = 'Cancel';
+
+    form.appendChild(formField);
+    form.appendChild(addBtn);
+    form.appendChild(cancelBtn);
+
+    userProjects.appendChild(form);
+  }
+
   function showAddProjectBtn() {
     const userProjects = document.querySelector('.user-project-list');
 
@@ -41,7 +70,7 @@ const dom = (() => {
 
   }
 
-  return {showProjects};
+  return {showProjects, showProjectForm};
 
 })();
 
