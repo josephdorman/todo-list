@@ -1,3 +1,4 @@
-// import addNewProject from "./projects";
-// addNewProject();
+import dom from "./dom";
+
+dom.showProjects();
 
