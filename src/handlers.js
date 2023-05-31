@@ -1,7 +1,7 @@
 import dom from "./dom";
 
 const listeners = (() => {
-  function newProjectClickhandler () {
+  function newProjectClickHandler () {
     const button = document.getElementById('new-project');
     
     button.addEventListener('click', () => {
@@ -9,7 +9,7 @@ const listeners = (() => {
     });
   }
 
-  return{newProjectClickhandler};
+  return{newProjectClickHandler};
 
 })();
 
