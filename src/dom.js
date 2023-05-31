@@ -1,60 +1,24 @@
 import projects from "./projects";
 
 const dom = (() => {
-  function showProjectForm() {
-    const userProjects = document.querySelector('.user-project-list');
+  function toggleProjectForm (state) {
+    const projectForm = document.querySelector('.project-creation');
+    const newProjectForm = document.querySelector('.new-project');
 
-    const form = document.createElement('div');
-    const formField = document.createElement('input');
-    const addBtn = document.createElement('button');
-    const cancelBtn = document.createElement('button');
-
-    form.classList.add('project-creation');
-
-    formField.setAttribute('id', 'project-creation-field');
-    formField.setAttribute('type', 'text');
-    formField.setAttribute('name', 'project-title');
-
-    addBtn.classList.add('project-creation-btns');
-    addBtn.setAttribute('id', 'project-creation-add');
-    addBtn.textContent = 'Add';
-
-    cancelBtn.classList.add('project-creation-btns');
-    cancelBtn.setAttribute('id', 'project-creation-cancel');
-    cancelBtn.textContent = 'Cancel';
-
-    form.appendChild(formField);
-    form.appendChild(addBtn);
-    form.appendChild(cancelBtn);
-
-    userProjects.appendChild(form);
-  }
-
-  function removeLastElement() {
-    const userProjects = document.querySelector('.user-project-list');
-    userProjects.removeChild(userProjects.lastElementChild);
-  }
-
-  function showAddProjectBtn() {
-    const userProjects = document.querySelector('.user-project-list');
-
-    const button = document.createElement('button');
-    const icon = document.createElement('img');
-    const name = document.createTextNode('Add New Project');
-
-    button.setAttribute('id', 'new-project');
-    button.classList.add('project');
-
-    icon.classList.add('icon');
-    icon.setAttribute('src', './images/icons/plus.svg');
-
-    button.appendChild(icon);
-    button.appendChild(name);
-    userProjects.appendChild(button);
+    if (!state === false) {
+      projectForm.classList.add('active');
+      newProjectForm.classList.add('active');
+    }
+    else if (!state === true) {
+      projectForm.classList.remove('active');
+      newProjectForm.classList.remove('active');
+    }
+    
   }
 
   function showProjects() {
     const userProjects = document.querySelector('.user-project-list');
+    const newProjectBtn = document.querySelector('.new-project');
 
     for (let i = 0; i < projects.projectsList.length; i++) {
       const project = document.createElement('button');
@@ -68,14 +32,12 @@ const dom = (() => {
 
       project.appendChild(projectIcon);
       project.appendChild(projectName);
-      userProjects.appendChild(project);
+      userProjects.insertBefore(project, newProjectBtn);
     }
-
-    showAddProjectBtn()
 
   }
 
-  return {showProjects, showProjectForm, removeLastElement};
+  return {showProjects, toggleProjectForm};
 
 })();
 
