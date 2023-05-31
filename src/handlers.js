@@ -1,3 +1,5 @@
+import dom from "./dom";
+
 const listeners = (() => {
   function newProjectClickhandler () {
     const button = document.getElementById('new-project');
@@ -8,7 +10,7 @@ const listeners = (() => {
   }
 
   return{newProjectClickhandler};
-  
+
 })();
 
 export default listeners;
