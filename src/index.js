@@ -4,3 +4,4 @@ import handlers from "./handlers";
 dom.showProjects();
 
 handlers.newProjectClickHandler();
+handlers.projectFormClickHandler();

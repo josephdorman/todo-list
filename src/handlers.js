@@ -7,6 +7,17 @@ const handlers = (() => {
     const formBtns = document.querySelectorAll('.project-creation-btns');
     const formField = document.getElementById('project-creation-field');
 
+    const formValidation = () => {
+      if (formField.value === '') {
+        alert('Project name cant be empty');
+      }
+      else {
+        projects.addProject(formField.value);
+        formField.value = '';
+        dom.toggleProjectForm(false);
+      }
+    }
+
     formBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         if (btn.id === 'project-creation-cancel') {
@@ -14,17 +25,13 @@ const handlers = (() => {
           formField.value = '';
         }
         else {
-          dom.toggleProjectForm(false);
-          projects.addProject(formField.value);
+          formValidation();
           dom.showProjects();
-          formField.value = '';
         }
       });
     });
 
   }
-
-  projectFormClickHandler();
 
   function newProjectClickHandler () {
     const button = document.querySelector('.new-project');
@@ -34,7 +41,7 @@ const handlers = (() => {
     });
   }
 
-  return{newProjectClickHandler};
+  return{newProjectClickHandler, projectFormClickHandler};
 
 })();
 
