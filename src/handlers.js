@@ -12,8 +12,9 @@ const handlers = (() => {
           dom.toggleProjectForm(false);
         }
         else {
+          const formField = document.getElementById('project-creation-field').value;
           dom.toggleProjectForm(false);
-          projects.addProject('tests');
+          projects.addProject(formField);
           dom.showProjects();
         }
       });
