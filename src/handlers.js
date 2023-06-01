@@ -11,11 +11,15 @@ const handlers = (() => {
       if (formField.value === '') {
         alert('Project name cant be empty');
       }
+      else if (projects.checkIfProjectExists(formField.value)) {
+        alert('Project name already exists');
+      }
       else {
         projects.addProject(formField.value);
         formField.value = '';
         dom.toggleProjectForm(false);
       }
+
     }
 
     formBtns.forEach(btn => {

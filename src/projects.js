@@ -17,7 +17,17 @@ const projects = (() => {
   const testProject = 'Test Project';
   addProject(testProject);
 
-  return {projectsList, addProject};
+  function checkIfProjectExists (name) {
+    for (let i = 0; i < projectsList.length; i++) {
+      if (projectsList[i].name === name) {
+        return true;
+      }
+    }
+    
+    return false;
+  }
+
+  return {projectsList, addProject, checkIfProjectExists};
 
 })();
 
