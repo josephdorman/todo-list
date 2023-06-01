@@ -5,17 +5,19 @@ const handlers = (() => {
   
   function projectFormClickHandler () {
     const formBtns = document.querySelectorAll('.project-creation-btns');
+    const formField = document.getElementById('project-creation-field');
 
     formBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         if (btn.id === 'project-creation-cancel') {
           dom.toggleProjectForm(false);
+          formField.value = '';
         }
         else {
-          const formField = document.getElementById('project-creation-field').value;
           dom.toggleProjectForm(false);
-          projects.addProject(formField);
+          projects.addProject(formField.value);
           dom.showProjects();
+          formField.value = '';
         }
       });
     });
