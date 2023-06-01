@@ -7,31 +7,31 @@ const handlers = (() => {
     const formBtns = document.querySelectorAll('.project-creation-btns');
     const formField = document.getElementById('project-creation-field');
 
-    const formValidation = () => {
-      if (formField.value === '') {
-        alert('Project name cant be empty');
+    const formValidation = (btnID) => {
+      if (btnID === 'project-creation-cancel') {
+        dom.toggleProjectForm(false);
+        formField.value = '';
+        formField.style.border = '1px solid #bdbdbd';
+      }
+      else if (formField.value === '') {
+        formField.style.border = '1px solid red';
       }
       else if (projects.checkIfProjectExists(formField.value)) {
-        alert('Project name already exists');
+        formField.style.border = '1px solid red';
       }
       else {
         projects.addProject(formField.value);
         formField.value = '';
         dom.toggleProjectForm(false);
+        formField.style.border = '1px solid #bdbdbd';
       }
 
     }
 
     formBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-        if (btn.id === 'project-creation-cancel') {
-          dom.toggleProjectForm(false);
-          formField.value = '';
-        }
-        else {
-          formValidation();
-          dom.showProjects();
-        }
+        formValidation(btn.id);
+        dom.showProjects();
       });
     });
 
