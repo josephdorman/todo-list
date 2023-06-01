@@ -18,6 +18,7 @@ const dom = (() => {
 
   function showProjects() {
     const userProjects = document.querySelector('.user-project-list');
+    userProjects.textContent = '';
 
     for (let i = 0; i < projects.projectsList.length; i++) {
       const project = document.createElement('button');
