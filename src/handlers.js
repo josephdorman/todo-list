@@ -1,5 +1,6 @@
 import dom from "./dom";
 import projects from "./projects";
+import tasks from "./tasks";
 
 const handlers = (() => {
 
