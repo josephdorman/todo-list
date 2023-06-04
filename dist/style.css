@@ -111,6 +111,10 @@ body {
   display: none;
 }
 
+.new-project {
+  width: 100%;
+}
+
 #project-creation-field {
   grid-column: 1/-1;
   padding: 5px 8px;
