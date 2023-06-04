@@ -2,6 +2,17 @@ import dom from "./dom";
 import projects from "./projects";
 
 const handlers = (() => {
+
+  function userProjectClickHandler () {
+    const userProjectBtn = document.querySelectorAll('.user-project-list button');
+
+    userProjectBtn.forEach(btn => {
+      btn.addEventListener('click', () => {
+        console.log(btn.id);
+      });
+    });
+
+  }
   
   function projectFormClickHandler () {
     const formBtns = document.querySelectorAll('.project-creation-btns');
@@ -32,6 +43,7 @@ const handlers = (() => {
       btn.addEventListener('click', () => {
         formValidation(btn.id);
         dom.showProjects();
+        userProjectClickHandler();
       });
     });
 
