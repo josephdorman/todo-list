@@ -26,6 +26,7 @@ const dom = (() => {
       const projectName = document.createTextNode(projects.projectsList[i].name);
 
       project.classList.add('project');
+      project.setAttribute('id', projects.projectsList[i].name);
 
       projectIcon.classList.add('icon');
       projectIcon.setAttribute('src', './images/icons/format-list-checks.svg');
