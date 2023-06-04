@@ -5,3 +5,4 @@ dom.showProjects();
 
 handlers.newProjectClickHandler();
 handlers.projectFormClickHandler();
+handlers.userProjectClickHandler();

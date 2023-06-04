@@ -38,7 +38,21 @@ const dom = (() => {
 
   }
 
-  return {showProjects, toggleProjectForm};
+  function showProjectContent(name) {
+    const projectTitle = document.querySelector('.project-title');
+    const projectTaskView = document.querySelector('.project-task-view');
+    const projectTaskRemaining = document.querySelector('.project-tasks-remaining');
+
+    projectTitle.textContent = name;
+
+    // Placeholder task amount
+    projectTaskRemaining.textContent = 'Tasks (2)';
+
+
+
+  }
+
+  return {showProjects, toggleProjectForm, showProjectContent};
 
 })();
 

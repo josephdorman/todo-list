@@ -8,6 +8,7 @@ const handlers = (() => {
 
     userProjectBtn.forEach(btn => {
       btn.addEventListener('click', () => {
+        dom.showProjectContent(btn.id);
         console.log(btn.id);
       });
     });
@@ -57,7 +58,7 @@ const handlers = (() => {
     });
   }
 
-  return{newProjectClickHandler, projectFormClickHandler};
+  return{newProjectClickHandler, projectFormClickHandler, userProjectClickHandler};
 
 })();
 
