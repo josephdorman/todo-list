@@ -39,16 +39,27 @@ const dom = (() => {
 
   }
 
+  function showTask (projectID) {
+    const projectTaskView = document.querySelector('.project-task-view');
+    projectTaskView.textContent = '';
+
+    console.table(projects.projectsList[projectID].tasks);
+
+    for (let i = 0; i < projects.projectsList[projectID].tasks.length; i++) {
+      projectTaskView.textContent += projects.projectsList[projectID].tasks[i].name;
+    }
+
+  }
+
   function showProjectContent(name) {
     const projectTitle = document.querySelector('.project-title');
-    const projectTaskView = document.querySelector('.project-task-view');
     const projectTaskRemaining = document.querySelector('.project-tasks-remaining');
 
     // Remaining task amount
     projectTitle.textContent = projects.projectsList[projects.selectProject(name)].name;
     projectTaskRemaining.textContent = `Tasks (${projects.projectsList[projects.selectProject(name)].tasks.length})`;
 
-
+    showTask(projects.selectProject(name));
 
   }
 
