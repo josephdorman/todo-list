@@ -44,11 +44,9 @@ const dom = (() => {
     const projectTaskView = document.querySelector('.project-task-view');
     const projectTaskRemaining = document.querySelector('.project-tasks-remaining');
 
-    // Placeholder task amount
-    const selectedProject = name.slice(name.length - 1);
-
-    projectTitle.textContent = projects.projectsList[selectedProject].name;
-    projectTaskRemaining.textContent = `Tasks (${projects.projectsList[selectedProject].tasks.length})`;
+    // Remaining task amount
+    projectTitle.textContent = projects.projectsList[projects.selectProject(name)].name;
+    projectTaskRemaining.textContent = `Tasks (${projects.projectsList[projects.selectProject(name)].tasks.length})`;
 
 
 

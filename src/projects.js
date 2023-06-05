@@ -4,7 +4,7 @@ const projects = (() => {
       name: 'Homework',
       tasks: [
         {
-          projectName: 'Homework',
+          projectIndex: '0',
           name: 'Deliver tea to Mrs Daniels',
           date: '06-21-2023'
         }
@@ -14,12 +14,12 @@ const projects = (() => {
       name: 'Chores',
       tasks: [
         {
-          projectName: 'Chores',
+          projectIndex: '1',
           name: 'Clean up the washroom',
           date: '02-15-2023'
         },
         {
-          projectName: 'Chores',
+          projectIndex: '1',
           name: 'Take out the trash',
           date: '02-15-2023'
         }
