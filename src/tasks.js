@@ -5,7 +5,7 @@ const tasks = (() => {
     constructor(projectIndex, name, date) {
       this.projectIndex = projectIndex;
       this.name = name;
-      this.dueDate = date;
+      this.date = date;
     }
   }
 
