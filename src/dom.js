@@ -46,7 +46,37 @@ const dom = (() => {
     console.table(projects.projectsList[projectID].tasks);
 
     for (let i = 0; i < projects.projectsList[projectID].tasks.length; i++) {
-      projectTaskView.textContent += projects.projectsList[projectID].tasks[i].name;
+      const task = document.createElement('div');
+      const taskName = document.createElement('div');
+      const taskDate = document.createElement('div');
+      const checkbox = document.createElement('input');
+      const manage = document.createElement('button');
+      const manageImage = document.createElement('img');
+
+      task.classList.add('project-task');
+
+      checkbox.setAttribute('type', 'checkbox');
+      checkbox.classList.add('project-task-checkbox');
+
+      taskName.classList.add('project-task-name');
+      taskName.textContent = projects.projectsList[projectID].tasks[i].name;
+
+      taskDate.classList.add('project-task-duedate');
+      taskDate.textContent = projects.projectsList[projectID].tasks[i].date;
+
+      manage.classList.add('manage');
+
+      manageImage.classList.add('icon');
+      manageImage.setAttribute('src', './images/icons/dots-vertical.svg');
+
+      manage.appendChild(manageImage);
+
+      task.appendChild(checkbox);
+      task.appendChild(taskName);
+      task.appendChild(taskDate);
+      task.appendChild(manage);
+
+      projectTaskView.appendChild(task);
     }
 
   }
