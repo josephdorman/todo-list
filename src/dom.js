@@ -1,4 +1,5 @@
 import projects from "./projects";
+import tasks from "./tasks";
 
 const dom = (() => {
   function toggleProjectForm (state) {
@@ -26,7 +27,7 @@ const dom = (() => {
       const projectName = document.createTextNode(projects.projectsList[i].name);
 
       project.classList.add('project');
-      project.setAttribute('id', projects.projectsList[i].name);
+      project.setAttribute('id', `projectIndex${i}`);
 
       projectIcon.classList.add('icon');
       projectIcon.setAttribute('src', './images/icons/format-list-checks.svg');
@@ -43,10 +44,11 @@ const dom = (() => {
     const projectTaskView = document.querySelector('.project-task-view');
     const projectTaskRemaining = document.querySelector('.project-tasks-remaining');
 
-    projectTitle.textContent = name;
-
     // Placeholder task amount
-    projectTaskRemaining.textContent = 'Tasks (2)';
+    const selectedProject = name.slice(name.length - 1);
+
+    projectTitle.textContent = projects.projectsList[selectedProject].name;
+    projectTaskRemaining.textContent = `Tasks (${projects.projectsList[selectedProject].tasks.length})`;
 
 
 

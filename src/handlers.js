@@ -10,7 +10,6 @@ const handlers = (() => {
     userProjectBtn.forEach(btn => {
       btn.addEventListener('click', () => {
         dom.showProjectContent(btn.id);
-        console.log(btn.id);
       });
     });
 

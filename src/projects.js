@@ -17,6 +17,11 @@ const projects = (() => {
           projectName: 'Chores',
           name: 'Clean up the washroom',
           date: '02-15-2023'
+        },
+        {
+          projectName: 'Chores',
+          name: 'Take out the trash',
+          date: '02-15-2023'
         }
       ]
     }
