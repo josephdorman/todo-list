@@ -89,6 +89,7 @@ const handlers = (() => {
 
     button.addEventListener('click', () => {
       if (projects.currentProject === '') {
+        // temp error for trying to add a task with no project selected
         console.log('Please select a project');
       }
       else {
