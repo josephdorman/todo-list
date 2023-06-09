@@ -17,37 +17,57 @@ const handlers = (() => {
   }
   
   function formClickHandler () {
-    const formBtns = document.querySelectorAll('.project-creation-btns');
-    const formField = document.getElementById('project-creation-field');
+    const projectFormBtns = document.querySelectorAll('.project-creation-btns');
+    const projectFormField = document.getElementById('project-creation-field');
+    const taskFormBtns = document.querySelectorAll('.task-form-btns');
+    const taskFormField = document.getElementById('.task-name');
+    const taskFormDate = document.getElementById('.task-date');
 
     const formValidation = (btnID) => {
-      if (btnID === 'project-creation-cancel') {
-        dom.toggleForm(false, 'project');
-        formField.value = '';
-        formField.style.border = '1px solid #bdbdbd';
+      if (btnID === 'project-creation-cancel' || btnID === 'project-creation-add') {
+        if (btnID === 'project-creation-cancel') {
+          dom.toggleForm(false, 'project');
+          projectFormField.value = '';
+          projectFormField.style.border = '1px solid #bdbdbd';
+        }
+        else if (projectFormField.value === '') {
+          projectFormField.style.border = '1px solid red';
+        }
+        else if (projects.checkIfProjectExists(projectFormField.value)) {
+          projectFormField.style.border = '1px solid red';
+        }
+        else {
+          projects.addProject(projectFormField.value);
+          projectFormField.value = '';
+          dom.toggleForm(false, 'project');
+          projectFormField.style.border = '1px solid #bdbdbd';
+        }
       }
-      else if (formField.value === '') {
-        formField.style.border = '1px solid red';
+      else if (btnID === 'add-task' || btnID === 'cancel-task') {
+        if (btnID === 'cancel-task') {
+          dom.toggleForm(false, 'task');
+          taskFormField.value = '';
+          taskFormDate.value = '';
+        }
       }
-      else if (projects.checkIfProjectExists(formField.value)) {
-        formField.style.border = '1px solid red';
-      }
-      else {
-        projects.addProject(formField.value);
-        formField.value = '';
-        dom.toggleForm(false, 'project');
-        formField.style.border = '1px solid #bdbdbd';
-      }
+
+      
 
     }
 
-    formBtns.forEach(btn => {
+    projectFormBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         formValidation(btn.id);
         dom.showProjects();
         userProjectClickHandler();
       });
     });
+
+    taskFormBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        formValidation(btn.id);
+      })
+    })
 
   }
 
