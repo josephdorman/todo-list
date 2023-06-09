@@ -17,11 +17,13 @@ const handlers = (() => {
   }
   
   function formClickHandler () {
+    // Future note for optimization, can declare buttons outside of this scope since they only need to be
+    // Query selected once instead of every time this function is called
     const projectFormBtns = document.querySelectorAll('.project-creation-btns');
     const projectFormField = document.getElementById('project-creation-field');
     const taskFormBtns = document.querySelectorAll('.task-form-btns');
-    const taskFormField = document.getElementById('.task-name');
-    const taskFormDate = document.getElementById('.task-date');
+    const taskFormField = document.getElementById('task-name');
+    const taskFormDate = document.getElementById('task-date');
 
     const formValidation = (btnID) => {
       if (btnID === 'project-creation-cancel' || btnID === 'project-creation-add') {
@@ -49,9 +51,14 @@ const handlers = (() => {
           taskFormField.value = '';
           taskFormDate.value = '';
         }
+        else if (btnID === 'add-task') {
+          tasks.addTask(projects.currentProject, taskFormField.value, taskFormDate.value);
+          taskFormField.value = '';
+          taskFormDate.value = '';
+          dom.toggleForm(false, 'task');
+        }
       }
 
-      
 
     }
 
@@ -66,6 +73,7 @@ const handlers = (() => {
     taskFormBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         formValidation(btn.id);
+        dom.showTask(projects.currentProject);
       })
     })
 

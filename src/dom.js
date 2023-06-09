@@ -105,7 +105,7 @@ const dom = (() => {
 
   }
 
-  return {showProjects, toggleForm, showProjectContent};
+  return {showProjects, toggleForm, showProjectContent, showTask};
 
 })();
 
