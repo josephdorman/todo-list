@@ -59,7 +59,16 @@ const handlers = (() => {
     });
   }
 
-  return{newProjectClickHandler, projectFormClickHandler, userProjectClickHandler};
+  function newTaskClickHandler () {
+    const button = document.querySelector('.add-task');
+
+    button.addEventListener('click', () => {
+      console.log(`Add task for ${projects.projectsList[projects.currentProject].name}`);
+      console.log(button.id);
+    });
+  }
+
+  return{newProjectClickHandler, projectFormClickHandler, userProjectClickHandler, newTaskClickHandler};
 
 })();
 
