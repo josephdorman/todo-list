@@ -32,10 +32,7 @@ const handlers = (() => {
           projectFormField.value = '';
           projectFormField.style.border = '1px solid #bdbdbd';
         }
-        else if (projectFormField.value === '') {
-          projectFormField.style.border = '1px solid red';
-        }
-        else if (projects.checkIfProjectExists(projectFormField.value)) {
+        else if (projectFormField.value === '' || projectFormField.value === projects.checkIfProjectExists(projectFormField.value)) {
           projectFormField.style.border = '1px solid red';
         }
         else {
@@ -73,7 +70,7 @@ const handlers = (() => {
     taskFormBtns.forEach(btn => {
       btn.addEventListener('click', () => {
         formValidation(btn.id);
-        dom.showTask(projects.currentProject);
+        dom.showProjectContent(projects.currentProject);
       })
     })
 
