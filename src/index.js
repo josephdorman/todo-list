@@ -4,6 +4,6 @@ import handlers from "./handlers";
 dom.showProjects();
 
 handlers.newProjectClickHandler();
-handlers.projectFormClickHandler();
+handlers.formClickHandler();
 handlers.userProjectClickHandler();
 handlers.newTaskClickHandler();

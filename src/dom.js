@@ -2,18 +2,30 @@ import projects from "./projects";
 import tasks from "./tasks";
 
 const dom = (() => {
-  function toggleProjectForm (state) {
+  function toggleForm (state, formType) {
     const projectForm = document.querySelector('.project-creation');
     const newProjectForm = document.querySelector('.new-project');
+    const taskForm = document.querySelector('.new-task-form');
 
-    if (!state === false) {
-      projectForm.classList.add('active');
-      newProjectForm.classList.add('active');
+    if (formType === 'project') {
+      if (!state === false) {
+        projectForm.classList.add('active');
+        newProjectForm.classList.add('active');
+      }
+      else if (!state === true) {
+        projectForm.classList.remove('active');
+        newProjectForm.classList.remove('active');
+      }
     }
-    else if (!state === true) {
-      projectForm.classList.remove('active');
-      newProjectForm.classList.remove('active');
+    else if (formType === 'task') {
+      if (!state === false) {
+        taskForm.classList.add('active');
+      }
+      else if (!state === true) {
+        taskForm.classList.remove('active');
+      }
     }
+    
     
   }
 
@@ -93,7 +105,7 @@ const dom = (() => {
 
   }
 
-  return {showProjects, toggleProjectForm, showProjectContent};
+  return {showProjects, toggleForm, showProjectContent};
 
 })();
 

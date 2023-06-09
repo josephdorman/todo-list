@@ -16,13 +16,13 @@ const handlers = (() => {
 
   }
   
-  function projectFormClickHandler () {
+  function formClickHandler () {
     const formBtns = document.querySelectorAll('.project-creation-btns');
     const formField = document.getElementById('project-creation-field');
 
     const formValidation = (btnID) => {
       if (btnID === 'project-creation-cancel') {
-        dom.toggleProjectForm(false);
+        dom.toggleForm(false, 'project');
         formField.value = '';
         formField.style.border = '1px solid #bdbdbd';
       }
@@ -35,7 +35,7 @@ const handlers = (() => {
       else {
         projects.addProject(formField.value);
         formField.value = '';
-        dom.toggleProjectForm(false);
+        dom.toggleForm(false, 'project');
         formField.style.border = '1px solid #bdbdbd';
       }
 
@@ -55,7 +55,7 @@ const handlers = (() => {
     const button = document.querySelector('.new-project');
     
     button.addEventListener('click', () => {
-      dom.toggleProjectForm(true);
+      dom.toggleForm(true, 'project');
     });
   }
 
@@ -63,12 +63,11 @@ const handlers = (() => {
     const button = document.querySelector('.add-task');
 
     button.addEventListener('click', () => {
-      console.log(`Add task for ${projects.projectsList[projects.currentProject].name}`);
-      console.log(button.id);
+      dom.toggleForm(true, 'task');
     });
   }
 
-  return{newProjectClickHandler, projectFormClickHandler, userProjectClickHandler, newTaskClickHandler};
+  return{newProjectClickHandler, formClickHandler, userProjectClickHandler, newTaskClickHandler};
 
 })();
 
