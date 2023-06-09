@@ -81,15 +81,15 @@ const dom = (() => {
 
   }
 
-  function showProjectContent(name) {
+  function showProjectContent(currentProject) {
     const projectTitle = document.querySelector('.project-title');
     const projectTaskRemaining = document.querySelector('.project-tasks-remaining');
 
     // Remaining task amount
-    projectTitle.textContent = projects.projectsList[projects.selectProject(name)].name;
-    projectTaskRemaining.textContent = `Tasks (${projects.projectsList[projects.selectProject(name)].tasks.length})`;
+    projectTitle.textContent = projects.projectsList[currentProject].name;
+    projectTaskRemaining.textContent = `Tasks (${projects.projectsList[currentProject].tasks.length})`;
 
-    showTask(projects.selectProject(name));
+    showTask(currentProject);
 
   }
 

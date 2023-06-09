@@ -1,4 +1,5 @@
 const projects = (() => {
+  const currentProject = '';
   const projectsList = [
     {
       name: 'Homework',
@@ -41,11 +42,6 @@ const projects = (() => {
     projectsList.push(project);
   }
 
-  function selectProject (projectID) {
-    const selectedProject = projectID.slice(projectID.length - 1);
-    return selectedProject;
-  }
-
   function checkIfProjectExists (name) {
     for (let i = 0; i < projectsList.length; i++) {
       if (projectsList[i].name === name) {
@@ -56,7 +52,7 @@ const projects = (() => {
     return false;
   }
 
-  return {projectsList, addProject, checkIfProjectExists, selectProject};
+  return {projectsList, currentProject, addProject, checkIfProjectExists};
 
 })();
 
