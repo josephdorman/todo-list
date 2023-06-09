@@ -118,18 +118,30 @@ body {
   outline: none;
 }
 
-.project-creation-btns {
+#task-name,
+#task-date {
+  padding: 5px 8px;
+  font-size: 16px;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  outline: none;
+}
+
+.project-creation-btns,
+.task-form-btns {
   border: none;
   border-radius: 5px;
   font-size: 16px;
   font-weight: bold;
 }
 
-#project-creation-cancel {
+#project-creation-cancel,
+#cancel-task {
   background-color: rgb(255, 31, 31);
 }
 
-#project-creation-add {
+#project-creation-add,
+#add-task {
   background-color: rgb(27, 196, 27);
 }
 
@@ -167,5 +179,13 @@ body {
   grid-template-columns: 25px 1fr 100px 25px;
   grid-template-rows: 35px;
   align-items: center;
+}
+
+.new-task-form {
+  display: grid;
+  grid-template-columns: 2fr 0.6fr 0.5fr 0.5fr;
+  grid-template-rows: 30px;
+  gap: 10px;
+  margin-top: 10px;
 }
 
