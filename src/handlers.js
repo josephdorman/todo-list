@@ -91,7 +91,12 @@ const handlers = (() => {
     const button = document.querySelector('.add-task');
 
     button.addEventListener('click', () => {
-      dom.toggleForm(true, 'task');
+      if (projects.currentProject === '') {
+        console.log('Please select a project');
+      }
+      else {
+        dom.toggleForm(true, 'task');
+      }
     });
   }
 
