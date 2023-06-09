@@ -182,10 +182,14 @@ body {
 }
 
 .new-task-form {
-  display: grid;
+  display: none;
   grid-template-columns: 2fr 0.6fr 0.5fr 0.5fr;
   grid-template-rows: 30px;
   gap: 10px;
   margin-top: 10px;
+}
+
+.new-task-form.active {
+  display: grid;
 }
 
