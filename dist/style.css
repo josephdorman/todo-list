@@ -40,6 +40,11 @@ body {
   height: 25px;
 }
 
+.project-delete:hover {
+  width: 28px;
+  height: 28px;
+}
+
 .add-task,
 .manage {
   height: 25px;
@@ -67,13 +72,20 @@ body {
 }
 
 .project {
-  display: flex;
-  align-items: center;
-  border: none;
+  display: grid;
   background-color: #f7f7f7;
-  gap: 10px;
+  grid-template-columns: 30px 1fr 30px;
+  grid-template-rows: 30px;
+  border: none;
+  align-items: center;
+  justify-items: center;
   padding: 10px;
+  gap: 10px;
   font-size: 18px;
+}
+
+.project-name {
+  justify-self: start;
 }
 
 .project:hover,
