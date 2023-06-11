@@ -36,7 +36,8 @@ const dom = (() => {
     for (let i = 0; i < projects.projectsList.length; i++) {
       const project = document.createElement('button');
       const projectIcon = document.createElement('img');
-      const projectName = document.createTextNode(projects.projectsList[i].name);
+      const projectName = document.createElement('span');
+      const projectManage = document.createElement('img');
 
       project.classList.add('project');
       project.setAttribute('id', `projectIndex${i}`);
@@ -44,8 +45,15 @@ const dom = (() => {
       projectIcon.classList.add('icon');
       projectIcon.setAttribute('src', './images/icons/format-list-checks.svg');
 
+      projectName.classList.add('project-name');
+      projectName.textContent = projects.projectsList[i].name;
+
+      projectManage.classList.add('icon', 'project-delete');
+      projectManage.setAttribute('src', './images/icons/trash-can-outline.svg');
+
       project.appendChild(projectIcon);
       project.appendChild(projectName);
+      project.appendChild(projectManage);
       userProjects.appendChild(project);
     }
 
